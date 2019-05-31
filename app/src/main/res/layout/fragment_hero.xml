@@ -12,14 +12,17 @@
             android:layout_height="200dp">
         <android.support.constraint.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" android:id="@+id/relativeLayout">
+                android:layout_height="match_parent" android:id="@+id/relativeLayout"
+                app:layout_constraintTop_toTopOf="@+id/textViewGender"
+                app:layout_constraintBottom_toTopOf="@+id/textViewGender">
 
             <ImageView android:layout_width="match_parent"
                        android:layout_height="match_parent"
                        android:src="@mipmap/ic_launcher"
                        android:id="@+id/imageView"
                        android:scaleType="centerCrop" app:layout_constraintTop_toTopOf="parent"
-                       app:layout_constraintStart_toStartOf="parent"/>
+                       app:layout_constraintStart_toStartOf="parent" android:layout_marginLeft="4dp"
+                       android:layout_marginStart="4dp"/>
 
             <TextView
                     android:layout_width="0dp"
@@ -28,10 +31,10 @@
                     android:background="#4f0e0d0e"
                     android:textSize="22sp"
                     android:textColor="@android:color/white"
-                    android:layout_marginBottom="16dp" app:layout_constraintStart_toStartOf="parent"
+                    android:layout_marginBottom="120dp" app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintBottom_toBottomOf="parent" android:id="@+id/textViewName"
                     android:gravity="center_horizontal"
-                    android:layout_marginLeft="16dp" android:layout_marginStart="16dp"/>
+                    android:layout_marginLeft="24dp" android:layout_marginStart="24dp"/>
             <TextView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -41,8 +44,9 @@
                     android:textColor="@android:color/white"
                     android:gravity="center_horizontal"
                     app:layout_constraintTop_toTopOf="parent" app:layout_constraintStart_toStartOf="parent"
-                    android:id="@+id/textViewPower" android:layout_marginTop="152dp" android:layout_marginLeft="348dp"
-                    android:layout_marginStart="348dp"/>
+                    android:id="@+id/textViewPower" android:layout_marginTop="152dp" android:layout_marginLeft="24dp"
+                    android:layout_marginStart="24dp"
+            />
             <TextView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -52,8 +56,8 @@
                     android:textColor="@android:color/white"
                     android:gravity="center_horizontal"
                     app:layout_constraintTop_toTopOf="parent" app:layout_constraintStart_toStartOf="parent"
-                    android:id="@+id/textViewGender" android:layout_marginTop="152dp" android:layout_marginLeft="204dp"
-                    android:layout_marginStart="204dp"/>
+                    android:id="@+id/textViewGender" android:layout_marginTop="100dp" android:layout_marginLeft="24dp"
+                    android:layout_marginStart="24dp"/>
 
         </android.support.constraint.ConstraintLayout>
 

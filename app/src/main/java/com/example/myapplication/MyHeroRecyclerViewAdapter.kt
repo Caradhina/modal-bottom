@@ -1,6 +1,7 @@
 package com.example.myapplication
 
-import android.content.Context
+import android.content.Intent
+import android.support.v4.app.FragmentManager
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
@@ -16,7 +17,8 @@ import kotlinx.android.synthetic.main.fragment_hero.view.*
 
 class MyHeroRecyclerViewAdapter(
     private var mValues: List<HeroFragment.Hero>,
-    private val mContext: Context
+    private val mContext: MainActivity,
+    private val fragmentManager: FragmentManager
 ) : RecyclerView.Adapter<MyHeroRecyclerViewAdapter.ViewHolder>() {
 
 
@@ -33,6 +35,10 @@ class MyHeroRecyclerViewAdapter(
         holder.mGender.text = item.gender
         holder.mPower.text = item.power.toString()
         Glide.with(mContext).load(item.imgUrl).into(holder.mImage)
+        holder.mView.setOnClickListener {
+            val bottomSheetFragment = HeroDialogFragment.newInstance(item.name, item.power.toString(), item.gender, item.imgUrl)
+            bottomSheetFragment.show(fragmentManager, bottomSheetFragment.tag)
+        }
     }
 
     override fun getItemCount(): Int = mValues.size

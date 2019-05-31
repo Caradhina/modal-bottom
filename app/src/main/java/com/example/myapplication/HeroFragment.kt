@@ -8,8 +8,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 
-import com.example.myapplication.dummy.DummyContent
-
 /**
  * A fragment representing a list of Items.
  * Activities containing this fragment MUST implement the
@@ -36,7 +34,6 @@ class HeroFragment : Fragment() {
     ): View? {
         val view = inflater.inflate(R.layout.fragment_hero_list, container, false)
 
-
         val heroes:List<Hero> = listOf(
             Hero("Superman", "M", 100, R.drawable.superman),
             Hero("Spiderman", "M", 90, R.drawable.spiderman),
@@ -49,9 +46,10 @@ class HeroFragment : Fragment() {
         if(view is RecyclerView){
             with(view){
                 layoutManager = LinearLayoutManager(context)
-                adapter = MyHeroRecyclerViewAdapter(heroes, this)
+                adapter = MyHeroRecyclerViewAdapter(heroes, activity as MainActivity, fragmentManager!!)
             }
         }
+
         return view
     }
 
